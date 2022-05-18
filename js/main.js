@@ -7,34 +7,52 @@ const person = [
     {
         name: "Wayne Barnett",
         role : "Founder & CEO",
-        image : "..img/wayne-barnett-founder-ceo.jpg",
+        image : "img/wayne-barnett-founder-ceo.jpg",
     },
     {
-        name: "Wayne Barnett",
-        role : "Founder & CEO",
-        image : "..img/angela-caroll-chief-editor.jpg",
+        name: "Angela Caroll",
+        role : "Chef Editor",
+        image : "img/angela-caroll-chief-editor.jpg",
     },
     {
-        name: "Wayne Barnett",
-        role : "Founder & CEO",
-        image : "..img/walter-gordon-office-manager.jpg",
+        name: "Walter Gordon",
+        role : "Office Manager",
+        image : "img/walter-gordon-office-manager.jpg",
     },
     {
-        name: "Wayne Barnett",
-        role : "Founder & CEO",
-        image : "..img/angela-lopez-social-media-manager.jpg",
+        name: "Angela Lopez",
+        role : "Social Media Manager",
+        image : "img/angela-lopez-social-media-manager.jpg",
     },
     {
-        name: "Wayne Barnett",
-        role : "Founder & CEO",
-        image : "..img/scott-estrada-developer.jpg",
+        name: "Scott Estrada",
+        role : "Developer",
+        image : "img/scott-estrada-developer.jpg",
     },
     {
-        name: "Wayne Barnett",
-        role : "Founder & CEO",
-        image : "..img/barbara-ramos-graphic-designer.jpg",
+        name: "Barbara Ramos",
+        role : "Graphic Designer",
+        image : "img/barbara-ramos-graphic-designer.jpg",
     }
 ]
 
 // 2. prendo dalla pg html il container dove inserirò le informazioni
+const personContainer = document.querySelector(".team-container");
 // 3. creo ciclo for per inserire all'interno della pg html tante persone quante definite nell'array.
+
+for ( i = 0; i < person.length; i++) {
+    const personBox =`
+        <div class="card-image">
+        <img
+            src="${person[i].image}"
+            alt="Wayne Barnett"
+        />
+        </div>
+        <div class="card-text">
+        <h3>${person[i].name}</h3>
+        <p>${person[i].role}</p>
+        </div>
+        </div>
+    `
+    personContainer.innerHTML += personBox; 
+}
